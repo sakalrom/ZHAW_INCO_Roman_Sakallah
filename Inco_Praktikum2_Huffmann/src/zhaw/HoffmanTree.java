@@ -381,13 +381,19 @@ public class HoffmanTree
 				throw new RuntimeException( "Hoffman code was not found in the cache. The cache is invalid.");
 			/** [10.1] - needs 2 lines of code using the instance "codeLeftForWritting" 
 			 * */
-			throw new NotImplementedException();
+			//throw new NotImplementedException();
+			codeLeftForWritting.add(hoffmanCodesCache.get(c));
+			codeLeftForWritting.writeInto(out);
+			
 			
 			if (LDEBUG) System.out.println("   W:   " + (char)c + " = " + hoffmanCodesCache.get( c).value);
 		}
 		/** [10.3] - needs 3 lines of code using the instance "codeLeftForWritting" 
 		 * */
-		throw new NotImplementedException();
+		codeLeftForWritting.add(hoffmanCodesCache.get(hoffmanContentEOFchar));
+		codeLeftForWritting.writeInto(out);
+		codeLeftForWritting.flashAllLeftBites(out);
+		//throw new NotImplementedException();
 	}
 
 	private void BuildHoffmanCodesCache()
